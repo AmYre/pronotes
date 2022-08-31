@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Welcome</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+      <h1>Welcome</h1>
+      <h2 th:utext="${message}">..!..</h2>
+      
+      <div>
+         <table border="1">
+            <tr>
+               <th>Libélles</th>
+               <th>PDF</th>
+            </tr>
+            <tr th:each="rat: ${rattrapages}">
+               <td th:utext="${rat.libelle}">...</td>
+               <td th:utext="${rat.pdf_sujet}">...</td>
+            </tr>
+         </table>
+      </div>
+         
+      <a th:href="@{/personList}">Person List</a>  
+      
+   </body>
+   
+</html>
