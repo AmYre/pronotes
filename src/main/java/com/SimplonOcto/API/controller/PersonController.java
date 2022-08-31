@@ -7,9 +7,9 @@ import java.util.Optional;
 
 import com.SimplonOcto.API.form.PersonForm;
 import com.SimplonOcto.API.model.Person;
-import com.SimplonOcto.API.model.Produit;
-import com.SimplonOcto.API.model.ProduitRepository;
-import com.SimplonOcto.API.service.ProduitService;
+import com.SimplonOcto.API.model.Rattrapage;
+import com.SimplonOcto.API.model.RattrapageRepository;
+import com.SimplonOcto.API.service.RattrapageService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -25,10 +25,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class PersonController {
 	
 	@Autowired
-	private ProduitRepository pr;
+	private RattrapageRepository pr;
 	
 	private static List<Person> persons = new ArrayList<Person>();
-	private Produit product = new Produit();
+	private Rattrapage product = new Rattrapage();
 
 	static {
 		persons.add(new Person("Bill", "Gates"));
@@ -46,7 +46,7 @@ public class PersonController {
 	@RequestMapping(value = { "/", "index" }, method = RequestMethod.GET)
 	public String index(Model model) {
 		
-		List<Produit> products = (List<Produit>) pr.findAll();
+		List<Rattrapage> products = (List<Rattrapage>) pr.findAll();
 
 		model.addAttribute("message", message);
 		model.addAttribute("rattrapages", products );

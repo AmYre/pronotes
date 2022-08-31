@@ -12,7 +12,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "rattrapage")
-public class Produit {
+public class Rattrapage {
 	
 	@Id
 	private Integer id_rattrapage;
@@ -23,11 +23,11 @@ public class Produit {
 	
 	private String pdf_sujet;
 	
-	public Produit() {
+	public Rattrapage() {
 		
 	}
 	
-	public Produit(Integer id_rattrapage, Date date_rattrapage, String libelle, String pdf_sujet) {
+	public Rattrapage(Integer id_rattrapage, Date date_rattrapage, String libelle, String pdf_sujet) {
 		this.id_rattrapage = id_rattrapage;
 		this.date_rattrapage = date_rattrapage;
 		this.libelle = libelle;
