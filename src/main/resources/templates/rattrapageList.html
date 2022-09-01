@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Person List</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+      <h1>Rattrapage List</h1>
+      <br/><br/>
+      <div>
+         <table border="1">
+            <tr>
+               <th>Nom du rattrapage</th>
+               <th>Sujet</th>
+               <th>Date</th>
+            </tr>
+            <tr th:each ="rattr : ${rattrapages}">
+               <td th:utext="${rattr.libelle}">...</td>
+               <td th:utext="${rattr.pdf_sujet}">...</td>
+               <td th:utext="${rattr.date_rattrapage}">...</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

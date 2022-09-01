@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Person List</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+      <h1>Surveillant List</h1>
+      <br/><br/>
+      <div>
+         <table border="1">
+            <tr>
+               <th>Nom</th>
+               <th>Prenom</th>
+               <th>Email</th>
+            </tr>
+            <tr th:each ="surv : ${surveillants}">
+               <td th:utext="${surv.nom}">...</td>
+               <td th:utext="${surv.prenom}">...</td>
+               <td th:utext="${surv.email}">...</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>
