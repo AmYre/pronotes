@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Prof List</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+      <h1>Professeur</h1>
+     
+      <br/><br/>
+      <div>
+         <table border="1">
+            <tr>
+               <th>NOM</th>
+               <th>PRENOM</th>
+               <th>Email</th>
+            </tr>
+            <tr th:each ="professeur : ${professeurs}">
+               <td th:utext="${professeur.nom}">...</td>
+               <td th:utext="${professeur.prenom}">...</td>
+               <td th:utext="${professeur.email}">...</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>
