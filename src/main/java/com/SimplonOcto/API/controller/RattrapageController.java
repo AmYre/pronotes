@@ -27,13 +27,13 @@ public class RattrapageController {
 	private RattrapageRepository rr;
 
 	@RequestMapping(value = { "/rattrapage" }, method = RequestMethod.GET)
-	public String RattrapageList(Model model) {
+	public String rattrapageList(Model model) {
 		
 		List<Rattrapage> rattrapages = (List<Rattrapage>) rr.findAll();
 
 		model.addAttribute("rattrapages", rattrapages);
 
-		return "RattrapageList";
+		return "rattrapageList";
 	}
 
 
