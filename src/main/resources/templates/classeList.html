@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Person List</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+      <h1>La Liste des Classes</h1>
+      <a href="addClasse">Ajouter une classe</a>
+      <br/><br/>
+      <div>
+         <table border="1">
+            <tr>
+               <th>N°</th>
+               <th>Nom</th>
+            </tr>
+            <tr th:each ="classe : ${classes}">
+               <td th:utext="${classe.id_classe}">...</td>
+               <td th:utext="${classe.nom}">...</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>
