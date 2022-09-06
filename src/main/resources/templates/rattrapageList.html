@@ -1,26 +1,73 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-   <head>
-      <meta charset="UTF-8" />
-      <title>Person List</title>
-      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
-   </head>
-   <body>
-      <h1>Rattrapage List</h1>
-      <br/><br/>
-      <div>
-         <table border="1">
-            <tr>
-               <th>Nom du rattrapage</th>
-               <th>Sujet</th>
-               <th>Date</th>
-            </tr>
-            <tr th:each ="rattr : ${rattrapages}">
-               <td th:utext="${rattr.libelle}">...</td>
-               <td th:utext="${rattr.pdf_sujet}">...</td>
-               <td th:utext="${rattr.date_rattrapage}">...</td>
-            </tr>
-         </table>
-      </div>
-   </body>
+<head>
+<meta charset="UTF-8" />
+<title>Person List</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<h1>Rattrapage List</h1>
+	<br />
+	<br />
+
+	<button>
+		<a th:href="@{/rattrapage?query=ef}">Effectué</a>
+	</button>
+	<button>
+		<a th:href="@{/rattrapage?query=efno}">Effectué non noté</a>
+	</button>
+	<button>
+		<a th:href="@{/rattrapage?query=noef}">Non effectué</a>
+	</button>
+		<button th:if="${(param.query != null)}">
+		<a th:href="@{/rattrapage}">Tous</a>
+	</button>
+
+
+
+	<table border="1">
+		<tr>
+			<th>Nom du rattrapage</th>
+			<th>Sujet</th>
+			<th>Date</th>
+			<th>Status</th>
+		</tr>
+		<div th:if="${(param.query == null)}">
+			<tr th:each="rattr : ${rattrapages}">
+				<td th:utext="${rattr.libelle}">...</td>
+				<td th:utext="${rattr.pdf_sujet}">...</td>
+				<td th:utext="${rattr.date_rattrapage}">...</td>
+				<td th:utext="${rattr.status}">...</td>
+			</tr>
+		</div>
+		<div th:if="${(param.query != null) and (param.query[0] == 'ef')}">
+			<tr th:each="rattra : ${ef}">
+				<td th:utext="${rattra.libelle}">...</td>
+				<td th:utext="${rattra.pdf_sujet}">...</td>
+				<td th:utext="${rattra.date_rattrapage}">...</td>
+				<td th:utext="${rattra.status}">...</td>
+			</tr>
+		</div>
+		
+		<div th:if="${(param.query != null) and (param.query[0] == 'efno')}">
+			<tr th:each="rattra : ${efno}">
+				<td th:utext="${rattra.libelle}">...</td>
+				<td th:utext="${rattra.pdf_sujet}">...</td>
+				<td th:utext="${rattra.date_rattrapage}">...</td>
+				<td th:utext="${rattra.status}">...</td>
+			</tr>
+		</div>
+		
+		<div th:if="${(param.query != null) and (param.query[0] == 'noef')}">
+			<tr th:each="rattra : ${noef}">
+				<td th:utext="${rattra.libelle}">...</td>
+				<td th:utext="${rattra.pdf_sujet}">...</td>
+				<td th:utext="${rattra.date_rattrapage}">...</td>
+				<td th:utext="${rattra.status}">...</td>
+			</tr>
+		</div>
+
+	</table>
+
+</body>
 </html>

@@ -30,12 +30,18 @@ public class RattrapageController {
 	public String rattrapageList(Model model) {
 		
 		List<Rattrapage> rattrapages = (List<Rattrapage>) rr.findAll();
+		List<Rattrapage> rattraEf = (List<Rattrapage>) rr.findByStatus("ef");
+		List<Rattrapage> rattraEfno = (List<Rattrapage>) rr.findByStatus("efno");
+		List<Rattrapage> rattraNoef = (List<Rattrapage>) rr.findByStatus("noef");
 
 		model.addAttribute("rattrapages", rattrapages);
+		model.addAttribute("ef", rattraEf);
+		model.addAttribute("efno", rattraEfno);
+		model.addAttribute("noef", rattraNoef);
 
 		return "rattrapageList";
 	}
-
+	
 
 
 }

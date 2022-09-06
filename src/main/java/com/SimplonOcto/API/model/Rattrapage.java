@@ -23,4 +23,6 @@ public class Rattrapage {
 	
 	private String pdf_sujet;
 	
+	private String status;
+	
 }
