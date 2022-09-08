@@ -10,18 +10,18 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "etudiant")
-public class Etudiant {
+@Table(name = "student")
+public class Student {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id_etudiant;
+	private Integer id;
 	
-	private String nom;
+	private String name;
 	
-	private String prenom;
+	private String lastName;
 	
-	private String photo;
+	private String picture;
 	
-	private Integer id_classe;
+	private Integer classe_id;
 }

@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SurveillantRepository extends CrudRepository<Surveillant,Integer> {
+public interface OverseerRepository extends CrudRepository<Overseer,Integer> {
 
 }

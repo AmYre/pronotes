@@ -7,8 +7,8 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RattrapageRepository extends CrudRepository<Rattrapage,Integer> {
+public interface TeacherRepository extends CrudRepository<Teacher,Integer> {
 
-	List<Rattrapage> findByStatus(String status);
+	Optional<Teacher> findById(Integer id);
 
 }

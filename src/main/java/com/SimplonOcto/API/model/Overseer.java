@@ -8,15 +8,15 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "surveillant")
-public class Surveillant {
+@Table(name = "overseer")
+public class Overseer {
 	
 	@Id
-	private Integer id_surveillant;
+	private Integer id;
 	
-	private String prenom;
+	private String name;
 	
-	private String nom;
+	private String lastName;
 	
 	private String email;
 	

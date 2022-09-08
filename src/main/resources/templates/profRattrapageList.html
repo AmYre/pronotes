@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
    <head>
       <meta charset="UTF-8" />
-      <title>Prof List</title>
+      <title>Rattr List</title>
       <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
    </head>
    <body>
@@ -13,13 +13,14 @@
          <table border="1">
             <tr>
                <th>NOM</th>
-               <th>PRENOM</th>
-               <th>Email</th>
+               <th>SUJET</th>
+               <th>DATE</th>
+               <th>STATUTS</th>
             </tr>
-            <tr th:each ="professeur : ${professeurs}">
-               <td th:utext="${professeur.nom}">...</td>
-               <td th:utext="${professeur.prenom}">...</td>
-               <td th:utext="${professeur.email}">...</td>
+            <tr th:each ="rattr : ${rattr}">
+				<td th:utext="${rattr.name}">...</td>
+				<td th:utext="${rattr.exam}">...</td>
+				<td th:utext="${rattr.resit_date}">...</td>
             </tr>
          </table>
       </div>

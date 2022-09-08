@@ -34,35 +34,35 @@
 		</tr>
 		<div th:if="${(param.query == null)}">
 			<tr th:each="rattr : ${rattrapages}">
-				<td th:utext="${rattr.libelle}">...</td>
-				<td th:utext="${rattr.pdf_sujet}">...</td>
-				<td th:utext="${rattr.date_rattrapage}">...</td>
+				<td th:utext="${rattr.name}">...</td>
+				<td th:utext="${rattr.exam}">...</td>
+				<td th:utext="${rattr.resitDate}">...</td>
 				<td th:utext="${rattr.status}">...</td>
 			</tr>
 		</div>
 		<div th:if="${(param.query != null) and (param.query[0] == 'ef')}">
 			<tr th:each="rattra : ${ef}">
-				<td th:utext="${rattra.libelle}">...</td>
-				<td th:utext="${rattra.pdf_sujet}">...</td>
-				<td th:utext="${rattra.date_rattrapage}">...</td>
+				<td th:utext="${rattra.name}">...</td>
+				<td th:utext="${rattra.exam}">...</td>
+				<td th:utext="${rattra.resitDate}">...</td>
 				<td th:utext="${rattra.status}">...</td>
 			</tr>
 		</div>
 		
 		<div th:if="${(param.query != null) and (param.query[0] == 'efno')}">
 			<tr th:each="rattra : ${efno}">
-				<td th:utext="${rattra.libelle}">...</td>
-				<td th:utext="${rattra.pdf_sujet}">...</td>
-				<td th:utext="${rattra.date_rattrapage}">...</td>
+				<td th:utext="${rattra.name}">...</td>
+				<td th:utext="${rattra.exam}">...</td>
+				<td th:utext="${rattra.resitDate}">...</td>
 				<td th:utext="${rattra.status}">...</td>
 			</tr>
 		</div>
 		
 		<div th:if="${(param.query != null) and (param.query[0] == 'noef')}">
 			<tr th:each="rattra : ${noef}">
-				<td th:utext="${rattra.libelle}">...</td>
-				<td th:utext="${rattra.pdf_sujet}">...</td>
-				<td th:utext="${rattra.date_rattrapage}">...</td>
+				<td th:utext="${rattra.name}">...</td>
+				<td th:utext="${rattra.exam}">...</td>
+				<td th:utext="${rattra.resitDate}">...</td>
 				<td th:utext="${rattra.status}">...</td>
 			</tr>
 		</div>

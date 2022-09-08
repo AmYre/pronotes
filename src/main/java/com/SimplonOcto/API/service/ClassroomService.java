@@ -5,23 +5,24 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.SimplonOcto.API.model.ClasseRepository;
-import com.SimplonOcto.API.model.Classe;
+import com.SimplonOcto.API.model.ClassroomRepository;
+import com.SimplonOcto.API.model.Classroom;
+import com.SimplonOcto.API.model.ClassroomRepository;
 
 import lombok.Data;
 
 @Data
 @Service
-public class ClasseService {
+public class ClassroomService {
 
 	@Autowired
-	private ClasseRepository clrepo;
+	private ClassroomRepository clrepo;
 	
-	public Iterable<Classe> getAllClasse(){
+	public Iterable<Classroom> getAllClassrooms(){
 		return clrepo.findAll();
 	}
 	
-	public Optional<Classe> getClasse(final Integer id){
+	public Optional<Classroom> getClassroom(final Integer id){
 		return clrepo.findById(id);
 	}
 	
@@ -29,7 +30,7 @@ public class ClasseService {
 		clrepo.deleteById(id);
 	}
 	
-	public void insertClasse(Classe classe) {
+	public void insertClassroom(Classroom classe) {
 		clrepo.save(classe);
 	}
 	

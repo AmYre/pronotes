@@ -7,23 +7,24 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.SimplonOcto.API.model.Surveillant;
-import com.SimplonOcto.API.model.SurveillantRepository;
+import com.SimplonOcto.API.model.Overseer;
+import com.SimplonOcto.API.model.OverseerRepository;
+import com.SimplonOcto.API.model.OverseerRepository;
 
 import lombok.Data;
 
 @Data
 @Service
-public class SurveillantService {
+public class OverseerService {
 
 	@Autowired
-	private SurveillantRepository sr;
+	private OverseerRepository sr;
 	
-	public Optional<Surveillant> getSurveillant(final Integer id) {
+	public Optional<Overseer> getOverseer(final Integer id) {
 		return sr.findById(id);
 	}
 	
-	public Iterable<Surveillant> getAllSurveillants(){
+	public Iterable<Overseer> getAllOverseers(){
 		
 		//List<Produit> produitsList = new ArrayList<>();
 		//pr.findAll().forEach(product -> produitsList.add(product));;
@@ -32,11 +33,11 @@ public class SurveillantService {
 		return sr.findAll();
 	}
 	
-	public void deleteSurveillant(final Integer id) {
+	public void deleteOverseer(final Integer id) {
 		sr.deleteById(id);
 	}
 	
-	public void insertSurveillant(Surveillant surveillant) {
+	public void insertOverseer(Overseer surveillant) {
 		sr.save(surveillant);
 	}
 }
