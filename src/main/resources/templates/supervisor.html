@@ -31,6 +31,7 @@
 			<th>Sujet</th>
 			<th>Date</th>
 			<th>Status</th>
+			<th>Prof</th>
 		</tr>
 		<div th:if="${(param.query == null)}">
 			<tr th:each="rattr : ${rattrapages}">
@@ -38,6 +39,7 @@
 				<td th:utext="${rattr.exam}">...</td>
 				<td th:utext="${rattr.resitDate}">...</td>
 				<td th:utext="${rattr.status}">...</td>
+				<td th:utext="${rattr.teacher.email}">...</td>
 			</tr>
 		</div>
 		<div th:if="${(param.query != null) and (param.query[0] == 'ef')}">

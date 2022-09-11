@@ -24,6 +24,6 @@ public class StudentController {
 		
 		model.addAttribute("etudiants", etudiants);
 		
-		return "etudiantList";
+		return "student";
 	}
 }

@@ -25,7 +25,7 @@ public class OverseerController {
 
 		model.addAttribute("surveillants", surveillants);
 
-		return "surveillantList";
+		return "overseer";
 	}
 
 
