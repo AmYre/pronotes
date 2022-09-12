@@ -34,9 +34,6 @@ public class Teacher implements Serializable{
 	public String email;
 	
 	public String password;
-	
-	public Integer rattrapage_id;
 
-	
 }
 	

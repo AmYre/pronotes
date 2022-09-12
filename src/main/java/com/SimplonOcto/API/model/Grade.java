@@ -23,34 +23,22 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "resit")
-public class Resit implements Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+@Table(name = "grade")
+public class Grade implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer id;
 	
-	public Date resitDate;
-	
-	public String name;
-	
-	public String exam;
-	
-	public String status;
-	
-	public Time duration;
-	
 	@ManyToOne
-	@JoinColumn(name= "teacher_id", referencedColumnName="id", insertable=false, updatable=false)
-	public Teacher teacher;
+	@JoinColumn(name="student_id", referencedColumnName="id", insertable=false, updatable=false)
+	public Student student;
+
+	@ManyToOne
+	@JoinColumn(name="resit_id", referencedColumnName="id", insertable=false, updatable=false)
+	public Resit resit;
+
+	
+	public Integer grade;
 	
 }
