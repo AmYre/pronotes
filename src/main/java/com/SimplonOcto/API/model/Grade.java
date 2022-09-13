@@ -31,11 +31,11 @@ public class Grade implements Serializable {
 	public Integer id;
 	
 	@ManyToOne
-	@JoinColumn(name="student_id", referencedColumnName="id", insertable=false, updatable=false)
+	@JoinColumn(name="studentId", referencedColumnName="id", insertable=false, updatable=false)
 	public Student student;
 
 	@ManyToOne
-	@JoinColumn(name="resit_id", referencedColumnName="id", insertable=false, updatable=false)
+	@JoinColumn(name="resitId", referencedColumnName="id", insertable=false, updatable=false)
 	public Resit resit;
 
 	

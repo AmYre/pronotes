@@ -18,10 +18,10 @@ import com.SimplonOcto.API.model.Student;
 public class StudentController {
 
 	@Autowired
-	private StudentRepository etr;
+	private StudentRepository str;
 	
 	@GetMapping("/students")
 	public Iterable<Student> getStudents(){
-		return etr.findAll();
+		return str.findAll();
 	}
 }
