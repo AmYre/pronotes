@@ -48,7 +48,7 @@ public class ResitController {
 	}
 
 	@GetMapping("/resitsbyteacher")
-	public List<Resit> professeurLIst(Model model, @RequestParam(required = false) Optional <Integer> id) {
+	public List<Resit> professeurLIst(@RequestParam(required = false) Optional <Integer> id) {
 
 		return rr.findAllByTeacherId(id);
 	}

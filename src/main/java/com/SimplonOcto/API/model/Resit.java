@@ -53,4 +53,8 @@ public class Resit implements Serializable {
 	@JoinColumn(name= "teacher_id", referencedColumnName="id", insertable=false, updatable=false)
 	public Teacher teacher;
 	
+	@ManyToOne
+	@JoinColumn(name= "overseer_id", referencedColumnName="id", insertable=false, updatable=false)
+	public Overseer overseer;
+	
 }
