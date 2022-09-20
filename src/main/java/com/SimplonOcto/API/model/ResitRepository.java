@@ -13,5 +13,7 @@ public interface ResitRepository extends JpaRepository<Resit,Integer> {
 	List<Resit> findByStatus(String status);
 	List<Resit> findByTeacherName(String name);
 	List<Resit> findAllByTeacherId(Optional <Integer> id);
+	List<Resit> findByOverseerName(String name);
+	List<Resit> findAllByOverseerId(Optional<Integer> id);
 
 }
