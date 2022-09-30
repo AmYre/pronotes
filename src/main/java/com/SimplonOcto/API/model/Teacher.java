@@ -12,6 +12,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
 @Entity
@@ -24,6 +26,8 @@ public class Teacher implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@Getter
+	@Setter
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer id;
 	

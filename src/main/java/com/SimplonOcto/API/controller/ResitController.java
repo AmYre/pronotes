@@ -80,7 +80,7 @@ public class ResitController {
 		return ResponseEntity.ok(currentResit);
 	}
 
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/delresit/{id}")
 	public ResponseEntity deleteResit(@PathVariable Integer id) {
 		rr.deleteById(id);
 		return ResponseEntity.ok().build();

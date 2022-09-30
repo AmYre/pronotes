@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.Time;
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,7 +27,7 @@ public class Resit implements Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer id;
 
 	public Timestamp resitDate;
@@ -39,12 +40,16 @@ public class Resit implements Serializable {
 
 	public Time duration;
 
-	@ManyToOne
-	@JoinColumn(name = "teacher_id", referencedColumnName = "id", insertable = false, updatable = false)
-	public Teacher teacher;
+	@Column(name = "teacher_id", nullable=false)
+	private int teacher_id;
+	@ManyToOne(optional=false)
+	@JoinColumn(name = "teacher_id", insertable=false, updatable=false)
+	private Teacher teacher;
 
-	@ManyToOne
-	@JoinColumn(name = "overseer_id", referencedColumnName = "id", insertable = false, updatable = false)
-	public Overseer overseer;
+	@Column(name = "overseer_id", nullable=false)
+	private int overseer_id;
+	@ManyToOne(optional=false)
+	@JoinColumn(name = "overseer_id", insertable=false, updatable=false)
+	private Overseer overseer;
 
 }

@@ -30,14 +30,17 @@ public class Grade implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer id;
 	
-	@ManyToOne
-	@JoinColumn(name="studentId", referencedColumnName="id", insertable=false, updatable=false)
-	public Student student;
-
-	@ManyToOne
-	@JoinColumn(name="resitId", referencedColumnName="id", insertable=false, updatable=false)
-	public Resit resit;
-
+	@Column(name = "student_id", nullable=false)
+	private int student_id;
+	@ManyToOne(optional=false)
+	@JoinColumn(name = "student_id", insertable=false, updatable=false)
+	private Student student;
+	
+	@Column(name = "resit_id", nullable=false)
+	private int resit_id;
+	@ManyToOne(optional=false)
+	@JoinColumn(name = "resit_id", insertable=false, updatable=false)
+	private Resit resit;
 	
 	public Integer grade;
 	
